@@ -1,0 +1,11 @@
+#! /bin/bash
+# Spectre & Meltdown downloader & Checker
+# Downloads and runs latest version of the Spectre & Meltdown checker
+# GPLv2 Sharing is Caring
+# Jerry Bezencon 2018
+
+# Variables
+TITLE="Spectre & Meltdown Checker"
+DIR="$(cd "$(dirname "$0")" && pwd)"
+
+xterm -geometry 140x40 -fa monospace -fs 13 -title "$TITLE" -e "$DIR/sm-main"

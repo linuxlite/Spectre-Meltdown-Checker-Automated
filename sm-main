@@ -1,0 +1,42 @@
+#! /bin/bash
+# Spectre & Meltdown downloader & Checker
+# Downloads and runs latest version of the Spectre & Meltdown checker
+# GPLv2 Sharing is Caring
+# Jerry Bezencon 2018
+
+# Variables
+CHKR="spectre-meltdown-checker.sh"
+SCRIPT="Spectre & Meltdown Checker"
+
+clear
+
+# Download Spectre & Meltdown Checker
+echo "Downloading latest $SCRIPT..."; echo " "
+test -f  ["$CHKR"] || rm -rf $CHKR
+sleep 2
+
+wget https://raw.githubusercontent.com/speed47/spectre-meltdown-checker/master/$CHKR
+chmod +x $CHKR
+
+# Check to se if Spectre & Meltdown Checker was downloaded
+if [ -f $CHKR ]
+then
+    echo "======================================================="; echo " "; echo "$SCRIPT downloaded successfully."; echo " "; echo "======================================================="; echo " "
+else
+    clear; echo "Something went wrong, try again."; echo " "; exit
+fi
+
+sed -i '3i clear' $CHKR
+
+# Run Spectre & Meltdown checker
+
+read -n 1 -s -r -p "Press any key to continue..."
+clear
+echo "Running $SCRIPT."; echo "Please enter your password:"; echo " "
+sudo sh $CHKR
+
+echo " "
+read -n 1 -s -r -p "Press any key to exit."
+echo " "
+
+exit
