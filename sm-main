@@ -7,10 +7,32 @@
 # Variables
 CHKR="spectre-meltdown-checker.sh"
 SCRIPT="Spectre & Meltdown Checker"
+DISTROID=`lsb_release -i`
+DISTROREL=`lsb_release -r`
+KERNEL=`uname -a`
+
+bold=$(tput bold)
+normal=$(tput sgr0)
 
 clear
 
+# Title
+echo "============================================================"
+echo "Spectre & Meltdown downloader & Checker for Linux"
+echo "Downloads the latest version of spectre-meltdown-checker.sh"
+echo "Created by Jerry Bezencon of the Linux Lite Project"
+echo "============================================================"
+echo " "
+
+# Display System information
+echo "${bold}$DISTROID${normal}"
+echo "${bold}$DISTROREL${normal}"
+echo "${bold}Kernel Version: $KERNEL${normal}"
+echo " "
+
 # Download Spectre & Meltdown Checker
+echo "Stage 1:"
+echo " "
 echo "Downloading latest $SCRIPT..."; echo " "
 test -f  ["$CHKR"] || rm -rf $CHKR
 sleep 2
@@ -18,7 +40,7 @@ sleep 2
 wget https://raw.githubusercontent.com/speed47/spectre-meltdown-checker/master/$CHKR
 chmod +x $CHKR
 
-# Check to se if Spectre & Meltdown Checker was downloaded
+# Check to see if Spectre & Meltdown Checker was downloaded
 if [ -f $CHKR ]
 then
     echo "======================================================="; echo " "; echo "$SCRIPT downloaded successfully."; echo " "; echo "======================================================="; echo " "
@@ -32,11 +54,13 @@ sed -i '3i clear' $CHKR
 
 read -n 1 -s -r -p "Press any key to continue..."
 clear
+echo "Stage 2:"
+echo " "
 echo "Running $SCRIPT."; echo "Please enter your password:"; echo " "
 sudo sh $CHKR
 
 echo " "
-read -n 1 -s -r -p "Press any key to exit."
+read -n 1 -s -r -p "Spectre and Meltdown scan complete. Press any key to exit."
 echo " "
 
 exit
