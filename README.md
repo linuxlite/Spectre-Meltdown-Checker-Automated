@@ -58,9 +58,3 @@ else
 </pre>
 
 ![](https://i.imgur.com/iByFcgd.gif)
-
-![](https://imgur.com/lBxeHBN.png)
-
-![](https://imgur.com/yqUk9mU.png)
-
-![](https://imgur.com/qyqFLj9.png)
