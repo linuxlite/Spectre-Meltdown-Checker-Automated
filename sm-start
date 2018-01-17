@@ -6,6 +6,8 @@
 
 # Variables
 TITLE="Spectre & Meltdown Checker"
+DISTRO=`lsb_release -sd`
+KERNEL=`uname -a`
 DIR="$(cd "$(dirname "$0")" && pwd)"
 
-xterm -geometry 140x40 -fa monospace -fs 13 -title "$TITLE" -e "$DIR/sm-main"
+xterm -geometry 140x40 -fa monospace -fs 13 -title "$TITLE - $DISTRO - $KERNEL" -e "$DIR/sm-main"
