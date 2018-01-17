@@ -41,7 +41,7 @@ chmod +x sm-*
 if
 </pre>
 
-you are using XFCE:
+you are using XFCE with Thunar:
 
 <pre>
 xfconf-query --channel thunar --property /misc-exec-shell-scripts-by-default --create --type bool --set true
