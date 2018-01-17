@@ -57,8 +57,8 @@ else
 ./sm-start
 </pre>
 
-![](http://imgur.com/iX6MaSHl.png)
+![](https://i.imgur.com/Cl4KQhW.png)
 
-![](http://imgur.com/9h0oOh5l.png)
+![](https://imgur.com/CSQErHb.png)
 
-![](http://imgur.com/4akDNGxl.png)
+![](https://imgur.com/HRWRsuK.png)
